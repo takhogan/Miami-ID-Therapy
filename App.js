@@ -2,7 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ActivitiesScreen from './screens/ActivitiesScreen';
-import ActivityDetailScreen from './screens/ActivityDetailScreen';
+import HomeScreen from './screens/HomeScreen';
+import CityHallScreen from './screens/CityHallScreen';
+import CommunityCenterScreen from './screens/CommunityCenterScreen';
+import GardenScreen from './screens/GardenScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,11 +42,10 @@ export default function App() {
           component={ActivitiesScreen}
           options={{ title: 'Activities' }}
         />
-        <Stack.Screen
-          name="ActivityDetail"
-          component={ActivityDetailScreen}
-          options={({ route }) => ({ title: route.params?.activity?.name ?? 'Activity' })}
-        />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Home' }} />
+        <Stack.Screen name="CityHall" component={CityHallScreen} options={{ title: 'City Hall' }} />
+        <Stack.Screen name="CommunityCenter" component={CommunityCenterScreen} options={{ title: 'Community Center' }} />
+        <Stack.Screen name="Garden" component={GardenScreen} options={{ title: 'Garden' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
